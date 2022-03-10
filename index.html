@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Filter And Search</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <h1>Bizlandia Attractions</h1>
+  <div class="wrapper">
+    <div id="search-container">
+      <input type="search" id="search-input" placeholder="Search attractions" />
+      <button id="search">Search</button>      
+    </div>
+    <div class="input-box-wrapper" id="list">
+      <button onclick="dropFunc()" class="dropbtn">Filters</button>
+      <div id="dropDown" class="dropDownContent">
+        <div class="box">
+          <input type="checkbox" class="checkbox" value="All" id="All"><span> All</span>
+        </div>
+        <div class="box">
+          <input type="checkbox" class="checkbox" value="Restaurant" id="Restaurant"><span> Restaurant</span>
+        </div>
+        <div class="box">
+          <input type="checkbox" class="checkbox" value="Movie-Theater" id="Movie-Theater"><span> Movie Theater</span>
+        </div>
+        <div class="box">
+          <input type="checkbox" class="checkbox" value="Park" id="Park"><span> Park</span>
+        </div>
+        <div class="box">
+          <input type="checkbox" class="checkbox" value="Amusement-Park" id="Amusement-Park"><span> Amusement Park</span>
+        </div>
+        <div class="box">
+          <input type="checkbox" class="checkbox" value="Store" id="Store"><span> Store</span>
+        </div>
+        <div class="box">
+          <input type="checkbox" class="checkbox" value="Museum" id="Museum"><span> Museum</span>
+        </div>
+        <div class="box">
+          <input type="checkbox" class="checkbox" value="Sporting-Event" id="Sporting-Event"><span> Sporting Event</span>
+        </div>
+        <div class="box">
+          <input type="checkbox" class="checkbox" value="Inside" id="Inside"><span> Inside</span>
+        </div>
+        <div class="box">
+          <input type="checkbox" class="checkbox" value="Outside" id="Outside"><span> Outside</span>
+        </div>
+        <div class="box">
+          <input type="checkbox" class="checkbox" value="Active" id="Active"><span> Active</span>
+        </div>
+        <div class="box">
+          <input type="checkbox" class="checkbox" value="Budget-Friendly" id="Budget-Friendly"><span> Budget Friendly</span>
+        </div>
+        <div class="box">
+          <input type="checkbox" class="checkbox" value="Good-For-Kids" id="Good-For-Kids"><span> Good For Kids</span>
+        </div>
+        <div class="box">
+          <input type="checkbox" class="checkbox" value="Good-For-Couples" id="Good-For-Couples"><span> Good For Couples</span>
+        </div>
+        <div class="box">
+          <input type="checkbox" class="checkbox" value="Pets-Allowed" id="Pets-Allowed"><span> Pets Allowed</span>
+        </div>
+        <div class="box">
+          <input type="checkbox" class="checkbox" value="Reservation-Required" id="Reservation-Required"><span> Reservation Required</span>
+        </div>
+        <div class="box">
+          <input type="checkbox" class="checkbox" value="Mask-Required" id="Mask-Required"><span> Mask Required</span>
+        </div>
+     
+        
+      </div>
+    </div>
+
+
+    <!-- <div id="valueList"></div> -->
+    <div id="products"></div>
+  </div>
+  <!-- Script -->
+  <script src="script.js"></script>
+  <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function dropFunc() {
+      document.getElementById("dropDown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    document.getElementById("dropDown").onclick = function (event) {
+      if (event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropDownContent");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
